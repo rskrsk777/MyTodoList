@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		2B4EBB6921DA0E2C005EC5E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EBB6821DA0E2C005EC5E8 /* AppDelegate.swift */; };
-		2B4EBB6B21DA0E2C005EC5E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EBB6A21DA0E2C005EC5E8 /* ViewController.swift */; };
 		2B4EBB6E21DA0E2C005EC5E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4EBB6C21DA0E2C005EC5E8 /* Main.storyboard */; };
 		2B4EBB7021DA0E2D005EC5E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4EBB6F21DA0E2D005EC5E8 /* Assets.xcassets */; };
 		2B4EBB7321DA0E2D005EC5E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4EBB7121DA0E2D005EC5E8 /* LaunchScreen.storyboard */; };
+		2B4EBB7B21DA0EA7005EC5E8 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EBB7A21DA0EA7005EC5E8 /* TodoListViewController.swift */; };
+		2B4EBB7D21DA1133005EC5E8 /* CompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EBB7C21DA1132005EC5E8 /* CompletedViewController.swift */; };
+		2B4EBB7F21DA1298005EC5E8 /* MakeTodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EBB7E21DA1298005EC5E8 /* MakeTodoListViewController.swift */; };
+		2B4EBB8221DA1ACF005EC5E8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4EBB8021DA1ACE005EC5E8 /* Realm.framework */; };
+		2B4EBB8321DA1ACF005EC5E8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B4EBB8121DA1ACF005EC5E8 /* RealmSwift.framework */; };
+		2B4EBB8521DA1B24005EC5E8 /* TodoRLMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4EBB8421DA1B24005EC5E8 /* TodoRLMDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2B4EBB6521DA0E2C005EC5E8 /* MyTodoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTodoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B4EBB6821DA0E2C005EC5E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B4EBB6A21DA0E2C005EC5E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B4EBB6D21DA0E2C005EC5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B4EBB6F21DA0E2D005EC5E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B4EBB7221DA0E2D005EC5E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B4EBB7421DA0E2D005EC5E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2B4EBB7A21DA0EA7005EC5E8 /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
+		2B4EBB7C21DA1132005EC5E8 /* CompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedViewController.swift; sourceTree = "<group>"; };
+		2B4EBB7E21DA1298005EC5E8 /* MakeTodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeTodoListViewController.swift; sourceTree = "<group>"; };
+		2B4EBB8021DA1ACE005EC5E8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		2B4EBB8121DA1ACF005EC5E8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		2B4EBB8421DA1B24005EC5E8 /* TodoRLMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRLMDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4EBB8321DA1ACF005EC5E8 /* RealmSwift.framework in Frameworks */,
+				2B4EBB8221DA1ACF005EC5E8 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +50,8 @@
 		2B4EBB5C21DA0E2C005EC5E8 = {
 			isa = PBXGroup;
 			children = (
+				2B4EBB8021DA1ACE005EC5E8 /* Realm.framework */,
+				2B4EBB8121DA1ACF005EC5E8 /* RealmSwift.framework */,
 				2B4EBB6721DA0E2C005EC5E8 /* MyTodoList */,
 				2B4EBB6621DA0E2C005EC5E8 /* Products */,
 			);
@@ -55,7 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				2B4EBB6821DA0E2C005EC5E8 /* AppDelegate.swift */,
-				2B4EBB6A21DA0E2C005EC5E8 /* ViewController.swift */,
+				2B4EBB7E21DA1298005EC5E8 /* MakeTodoListViewController.swift */,
+				2B4EBB7A21DA0EA7005EC5E8 /* TodoListViewController.swift */,
+				2B4EBB7C21DA1132005EC5E8 /* CompletedViewController.swift */,
+				2B4EBB8421DA1B24005EC5E8 /* TodoRLMDB.swift */,
 				2B4EBB6C21DA0E2C005EC5E8 /* Main.storyboard */,
 				2B4EBB6F21DA0E2D005EC5E8 /* Assets.xcassets */,
 				2B4EBB7121DA0E2D005EC5E8 /* LaunchScreen.storyboard */,
@@ -135,7 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B4EBB6B21DA0E2C005EC5E8 /* ViewController.swift in Sources */,
+				2B4EBB7F21DA1298005EC5E8 /* MakeTodoListViewController.swift in Sources */,
+				2B4EBB7D21DA1133005EC5E8 /* CompletedViewController.swift in Sources */,
+				2B4EBB8521DA1B24005EC5E8 /* TodoRLMDB.swift in Sources */,
+				2B4EBB7B21DA0EA7005EC5E8 /* TodoListViewController.swift in Sources */,
 				2B4EBB6921DA0E2C005EC5E8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +304,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T539QG34B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyTodoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +326,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T539QG34B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MyTodoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

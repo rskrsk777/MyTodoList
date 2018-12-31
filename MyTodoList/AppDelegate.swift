@@ -1,10 +1,7 @@
 //
 //  AppDelegate.swift
 //  MyTodoList
-//
-//  Created by ryosuke kubo on 2018/12/31.
 //  Copyright © 2018 ryosuke kubo. All rights reserved.
-//
 
 import UIKit
 
@@ -12,10 +9,21 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var testList = ["nanami", "kamachan", "kamada", "panda"]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = .white
+        let navigationTodoViewController = UINavigationController(rootViewController: TodoListViewController())
+        navigationTodoViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 1)
+        let completedViewController = CompletedViewController()
+        let navigationCompletedViewController = UINavigationController(rootViewController: completedViewController)
+        navigationCompletedViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
+        let viewControllers = [navigationTodoViewController, navigationCompletedViewController]
+        let todoTabBarController = UITabBarController()
+        todoTabBarController.viewControllers = viewControllers
+        window?.rootViewController = todoTabBarController
         return true
     }
 
