@@ -15,6 +15,7 @@ class TodoListViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Todo List"
         todoTableView = UITableView(frame: view.frame)
+
         todoTableView.delegate = self
         todoTableView.dataSource = self
         view.addSubview(todoTableView)
@@ -39,6 +40,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "todoCell")
         let todoList = appDelegate?.testList[indexPath.row]
         cell.textLabel?.text = todoList
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
         cell.detailTextLabel?.text = "member"
         return cell
     }

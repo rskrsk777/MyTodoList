@@ -7,7 +7,8 @@
 import UIKit
 
 class MakeTodoListViewController: UIViewController {
-    
+
+    var scroll = UIScrollView()
     var todoLabel: UILabel!
     var todoTextField: UITextField!
     var todoDateLabel: UILabel!
@@ -18,14 +19,19 @@ class MakeTodoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Todoを入力"
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.save))
+        scroll.frame = UIScreen.main.bounds
+        scroll.backgroundColor = UIColor.white
+        scroll.contentMode = UIView.ContentMode.bottom
+        scroll.contentSize = CGSize(width: UIScreen.main.bounds.width, height: view.frame.maxY + 200)
+        view.addSubview(scroll)
         // todo label
         todoLabel = UILabel(frame: CGRect(x: 20, y: 200, width: UIScreen.main.bounds.maxX - 40, height: 50))
         todoLabel.text = "todoを入力"
         todoLabel.textAlignment = NSTextAlignment.center
         todoLabel.font = UIFont.systemFont(ofSize: 30)
         todoLabel.adjustsFontSizeToFitWidth = true
-        view.addSubview(todoLabel)
+        scroll.addSubview(todoLabel)
         
         // todo label textfield
         todoTextField = UITextField(frame: CGRect(x: 20, y: todoLabel.frame.maxY + 30, width: UIScreen.main.bounds.maxX - 40, height: 50))
@@ -35,7 +41,7 @@ class MakeTodoListViewController: UIViewController {
         todoTextField.textAlignment = NSTextAlignment.center
         todoTextField.font = UIFont.systemFont(ofSize: 30)
         todoTextField.adjustsFontSizeToFitWidth = true
-        view.addSubview(todoTextField)
+        scroll.addSubview(todoTextField)
         
         // todoDateLabel
         todoDateLabel = UILabel(frame: CGRect(x: 20, y: todoTextField.frame.maxY + 60, width: UIScreen.main.bounds.maxX - 40, height: 50))
@@ -46,18 +52,17 @@ class MakeTodoListViewController: UIViewController {
         todoDateLabel.font = UIFont.systemFont(ofSize: 30)
         todoDateLabel.adjustsFontSizeToFitWidth = true
         todoDateLabel.layer.shadowOpacity = 0.2
-        view.addSubview(todoDateLabel)
+        scroll.addSubview(todoDateLabel)
         
         // todoDate Textfield
         todoDateTextField = UITextField(frame: CGRect(x: 20, y: todoDateLabel.frame.maxY + 30, width: UIScreen.main.bounds.maxX - 40, height: 50))
         todoDateTextField.placeholder = "Deadline"
         todoDateTextField.layer.cornerRadius = 10
-        todoDateTextField.layer.shadowOpacity = 0.2
         todoDateTextField.layer.borderWidth = 1
         todoDateTextField.textAlignment = NSTextAlignment.center
         todoDateTextField.font = UIFont.systemFont(ofSize: 30)
         todoDateTextField.adjustsFontSizeToFitWidth = true
-        view.addSubview(todoDateTextField)
+        scroll.addSubview(todoDateTextField)
         
         // todo priority label
         todoPriorityLabel = UILabel(frame: CGRect(x: 20, y: todoDateTextField.frame.maxY + 60, width: UIScreen.main.bounds.maxX - 40, height: 50))
@@ -65,18 +70,30 @@ class MakeTodoListViewController: UIViewController {
         todoPriorityLabel.textAlignment = NSTextAlignment.center
         todoPriorityLabel.font = UIFont.systemFont(ofSize: 30)
         todoDateTextField.adjustsFontSizeToFitWidth = true
-        view.addSubview(todoPriorityLabel)
+        scroll.addSubview(todoPriorityLabel)
         
         // todo priority textfield
-        todoPriorityTextField = UITextField(frame: CGRect(x: 20, y: todoPriorityLabel.frame.maxY + 30, width: UIScreen.main.bounds.maxX - 40, height: 50))
+        todoPriorityTextField = UITextField()
         todoPriorityTextField.placeholder = "Priority"
         todoPriorityTextField.layer.cornerRadius = 10
-        todoPriorityTextField.layer.shadowOpacity = 0.2
         todoPriorityTextField.layer.borderWidth = 1
         todoPriorityTextField.font = UIFont.systemFont(ofSize: 30)
         todoPriorityTextField.textAlignment = NSTextAlignment.center
         todoPriorityTextField.adjustsFontSizeToFitWidth = true
-        view.addSubview(todoPriorityTextField)
+        scroll.addSubview(todoPriorityTextField)
+        // translatesAutoresizingMaskIntoConstraintsをfalseにしないとエラーになる
+        todoPriorityTextField.translatesAutoresizingMaskIntoConstraints = false
+        // todoPriorityLabelの左端(leadingAnchor)と同じにする
+        todoPriorityTextField.leadingAnchor.constraint(equalTo: todoPriorityLabel.leadingAnchor).isActive = true
+        // todoPriorityLabelの最下部(bottomAnchor)より30pt下にする
+        todoPriorityTextField.topAnchor.constraint(equalTo: todoPriorityLabel.bottomAnchor, constant: 30).isActive = true
+        // todoPriorityLabelと横幅を同じにする
+        todoPriorityTextField.widthAnchor.constraint(equalTo: todoPriorityLabel.widthAnchor).isActive = true
+        todoPriorityTextField.heightAnchor.constraint(equalTo: todoPriorityLabel.heightAnchor).isActive = true
+        
     }
 
+    @objc func save() {
+        
+    }
 }
