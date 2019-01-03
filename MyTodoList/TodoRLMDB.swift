@@ -11,13 +11,17 @@ import RealmSwift
 
 class TodoRLMDB: Object {
     
-    @objc dynamic var id = 0
-    @objc dynamic var todoName = ""
-    @objc dynamic var todoDate = Date()
+//    @objc dynamic var id = 0
+    @objc dynamic var todoName:String = ""
+    @objc dynamic var todoDate:String = ""
     @objc dynamic var todoPriority = 1
-    override static func primaryKey() -> String {
-        return "id"
-    }
+//    override static func primaryKey() -> String {
+//        return "id"
+//    }
     
+}
+
+class TodoCompleted: TodoRLMDB {
+
 }
 
